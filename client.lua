@@ -318,13 +318,13 @@ CreateThread(function()
 			SetVehicleEngineOn(vehicle,false,true,true)
 			SetVehicleUndriveable(vehicle, true)
 			SetVehicleAudioBodyDamageFactor(vehicle, 0.3)
-            exports.mythic_notify:SendAlert('error','Your vehicle has stalled',2500)
-            local unstall = exports["skillbar"]:taskBar(1500,math.random(2,5)) -- replace with a skill check thing of your choosing
-            if unstall ~= 100 or not isPedDrivingAVehicle() then
-				stalled = true
-                Wait(math.random(1500,5000))
-				SetVehicleEngineOn(vehicle,false,true,true)
-			end
+            -- exports.mythic_notify:SendAlert('error','Your vehicle has stalled',2500)
+            -- local unstall = exports["skillbar"]:taskBar(1500,math.random(2,5)) -- replace with a skill check thing of your choosing
+            -- if unstall ~= 100 or not isPedDrivingAVehicle() then
+				-- stalled = true
+                -- Wait(math.random(1500,5000))
+				-- SetVehicleEngineOn(vehicle,false,true,true)
+			-- end
 			stalled = false
 			if GetPedInVehicleSeat(vehicle, -1) == ped then
 				SetVehicleUndriveable(vehicle, false)
@@ -332,7 +332,7 @@ CreateThread(function()
 				if GetVehicleCurrentGear(vehicle) ~= 1 then
 					SetVehicleClutch(vehicle, 1)
 				end
-				exports.mythic_notify:SendAlert('success','You managed to start your vehicle',2500)
+				-- exports.mythic_notify:SendAlert('success','You managed to start your vehicle',2500)
 			end
         end 
     end 
